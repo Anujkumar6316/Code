@@ -1,0 +1,31 @@
+git commit -a -m "mgs to shown" --> this cmd is used to skip the stagging process. but file needs to be tracked first.
+
+git log -p --> show the what are the changes made in the past.
+git log --stat --> this is same this -p but less content
+git show <hash code> --> this the changes made in this log.
+git diff file_name --> show changes made locally.
+
+git rm file_name --> removes file for the git log.
+git mv old_file_name new_file_name --> rename's the file.
+
+.gitignore files -->
+.gitignore files are used to tell the git tool to intentionally ignore some files in a given Git repository. For example, this can be useful for configuration files or metadata files that a user may not want to check into the master branch. Check out more at: https://git-scm.com/docs/gitignore.
+
+git restore --staged file_name --> this will remove the file from staggin area.
+git restore file_name --> this will restore the file before the modification is made.
+
+git revert HEAD --> cmd is used rollback to the previous file.
+
+
+*** BRACHING AND MERGING ***
+git branch --> list all the present branch
+git checkout -b new_branch --> creates a new branch and shift to that branch
+git checkout branch_name --> moving to another branch
+git branch -d branch_name --> deletes the branch if it's already merged if not then it shows error
+git merge branch_name --> merging two branch
+git merge --abort --> reverts the merging 
+git log --graph --oneline --> shows the logs in graph
+
+
+*** REMOTE INTERACTION ***
+git config --global credential.helper cache --> with we don't have enter our credential again and again.
