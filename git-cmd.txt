@@ -29,3 +29,8 @@ git log --graph --oneline --> shows the logs in graph
 
 *** REMOTE INTERACTION ***
 git config --global credential.helper cache --> with we don't have enter our credential again and again.
+git remote -v --> show link for push and fetch
+git remote show origin --> show bunch of information for origin
+git branch -r --> 
+git fetch --> downloads the specific objects
+git remote update --> fetches most up-to-date objects.
