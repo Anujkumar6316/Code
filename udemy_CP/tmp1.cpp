@@ -9,7 +9,7 @@ int main(){
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	ll n = 10e8; // 10e8==10^8
+	ll n = 1e8; // 10e8==10^8
 	cout<<n<<endl;
 	int max=INT_MAX; // comes in bits/stdc++.h max value a int can hold;
 	int min=INT_MIN;
