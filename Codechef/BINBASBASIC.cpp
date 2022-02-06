@@ -2,35 +2,24 @@
 using namespace std;
 
 void sol(){
-	string str;
-	int n,k;
+	int n,k,flag=1;
 	cin>>n>>k;
+	string str;
 	cin>>str;
-	int arr1[2]={0};
-	int arr2[2]={0};
-	for(int i=0;i<n/2;i++){
-		if(str[i]==1)
-			arr1[1]++;
-		else
-			arr1[0]++;
-	}
-	if(n%2==0){
-		for(int i=n/2;i<n;i++){
-			if(str[i]==1)
-				arr2[1]++;
-			else
-				arr2[0]++;
+	for(int i=0;i<(str.size())/2;i++){
+		if(str[i]!=str[str.size()-1-i]){
+			// if(k<=0){
+			// 	flag=0;
+			// 	break;
+			// }
+			k--;
 		}
 	}
-	else{
-		for(int i=0;i<n/2;i++){
-			if(str[i]==1)
-				arr2[1]++;
-			else
-				arr2[0]++;
-		}		
+	if(k>=0){
+		cout<<"YES"<<endl;
 	}
-
+	else
+		cout<<"NO"<<endl;
 }
 
 int main(){
@@ -40,7 +29,7 @@ int main(){
 	freopen("/home/anuj/output.txt","w",stdout);
 	#endif
 	int t;
-	//int t=0;
+	//int t=1;
 	cin>>t;
 	while(t--)
 		sol();
