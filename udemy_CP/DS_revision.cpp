@@ -1,6 +1,17 @@
+/*
+	Classic array
+	array stl
+	vector stl
+*/
+
+
+
+
+
 #include <iostream>
 #include <array>
 #include <algorithm> //sort(pos 1st, pos last+1)
+#include <vector>
 using namespace std;
 
 void _stdio(){
@@ -26,6 +37,12 @@ void update_stl_arr(array<int,5> &arr_stl,int pos,int ele){
 void display_stl_arr(const array<int,5> xarr ){
 	for(int i=0;i<xarr.size();i++)
 		cout<<xarr[i]<<" ";
+	cout<<endl;
+}
+
+void vector_display(vector<int> v){
+	for(int i:v)
+		cout<<i<<" ";
 	cout<<endl;
 }
 
@@ -62,4 +79,89 @@ int main(){
 	sort(arr_stl.begin(),arr_stl.end());
 	cout<<"updated arr_stl(sort & ele replacement): ";
 	display_stl_arr(arr_stl);
+
+
+
+	//vector stl --> if vector's capacity is full then it doubles it's capacity during runtime.
+
+	/*
+	some imp method in vector
+		[]
+		at()
+		back()
+		begin()
+		capacity()
+		clear() --> delets the all elements of vector
+		empty() --> same of clear
+		end()
+		erase()
+		front()
+		insert()
+		pop_back() --> deletes the last element
+		push_back() --> insert the ele at last pos
+		reserve()
+		resize()
+		size() --> length of vector
+	*/
+	cout<<"\n**Vector stl**"<<endl;
+
+	//range intialization..
+	vector<int> v1(3,5);
+	for(auto i:v1)
+		cout<<i<<" ";
+	cout<<endl;
+
+	//copying vector..
+	vector<int> v2(v1);
+	vector_display(v2);
+
+	//list
+	int l[]={2,3,4,3,2};
+	vector<int> v3(l,l+5);
+	vector_display(v3);
+
+	//classical way.
+	vector<int> v4={1,2,3,4,5};
+	vector_display(v4);
+
+	cout<<"Size of v1: "<<v1.size()<<endl;
+	cout<<"v2[0]: "<<v2.at(0)<<endl;
+	cout<<"capacity of v3: "<<v3.capacity()<<endl; 	
+	cout<<"Max of v4: "<<v4.max_size()<<endl;
+
+
+	// deque --> it is double-ended queue in which we can push or pop the element from both sides.
+	/*
+		--> it is not neccesery that element will store in continous manner bcoz it used pointer.
+	* some imp method:--
+		[]
+		at()
+		back()
+		begin()
+		capacity()
+		clear() --> delets the all elements of deque
+		empty() --> same of clear
+		end()
+		erase()
+		front()
+		insert()
+		pop_back() --> deletes the last element
+		pop_front() --> deletes the front element
+		push_back() --> insert the ele at last pos
+		push_front() --> insert the ele at front pos
+		reserve()
+		resize()
+		size() --> length of vector
+	*/
+
+	cout<<"\n** deque stl**"<<endl;
+	//create a "deque"
+	deque<int> d1;
+	deque<int> d2(4,45); //45,45,45,45
+	deque<int> d3(d2.begin(),d2.end()); //iterating d2 and inserting in d3
+	deque<int> d4(d3); //copying d3 in d4
+
+	int d_a[]={1,2,3,4,5,6};
+	int d_n=sizeof(d_a)/sizeof(d_a[0]);
+	deque<int> d5(d_a,d_a+n);
 }
