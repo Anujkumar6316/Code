@@ -1,0 +1,6 @@
+sudo snap install <package-name>
+sudo snap remove <package-name>
+
+sudo pacman -Syy --> updates the package
+sudo pacman -S <package-name> --> install package from pacman
+sudo pacman -R <package-name> --> uninstall package using pacman
