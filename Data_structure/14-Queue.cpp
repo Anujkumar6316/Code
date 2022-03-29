@@ -255,6 +255,19 @@ void display_dequene(){
 
 // ** priority queues **
 
+// 1. limited set of priorities
+class lsop_queue{
+	int data;
+	int rear;
+	int size;
+	int *arr;
+	lsop_queue(size){
+		rear=-1;
+		this->size=size;
+		arr=new int[size];
+	}
+}
+
 
 
 int main(){
