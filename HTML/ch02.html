@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practice of chapter- 2</title>
+</head>
+<body>
+	<pre>Attributes: add more info in html tag</pre>
+	<i><b>Heading tag</b></i>
+	<p>Note: we should not use heading tag for style</p>
+	<h1>This is h1</h1>
+	<h2>This is h2</h2>
+	<h3>This is h3</h3>
+	<h4>This is h4</h4>
+	<h5>This is h5</h5>
+	<hr>
+	<i><b>Anchor tag</b></i>
+	<a href="https://www.google.com">Google</a>
+	<hr>
+	<i><b>Img tag</b></i>
+	<img src="https://cdn.statusqueen.com/mobilewallpaper/thumbnail/mobile_wallpaper78-213.jpg", alt="pc-wallpaper">
+	<i>This is italic</i>
+	<b>This is bold</b>
+	<u>This is underline</u>
+	<i><b>New line(br tag)</b></i>
+	<br>
+	<i><b>Big and small tag</b></i>
+	<big>This is big</big>
+	<small>This is small</small>
+	<i><b>Horizontal line(hr tag)</b></i>
+	<hr>
+	<i><b>subscript</b></i>
+	<p>CO<sub>2</sub></p>
+	<i><b>superscript</b></i>
+	<p>ax<sup>2</sup>+bx+c</p>
+	<i><b>Pre tag</b></i>
+	<pre>#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+void _stdio(){
+	#ifndef ONLINE_JUDGE
+	freopen("/home/anuj/input.txt","r",stdin);
+	freopen("/home/anuj/output.txt","w",stdout);
+	#endif
+}
+
+bool isPowerOfTwo(int n)
+{
+   if(n==0)
+   return false;
+ 
+   return (ceil(log2(n)) == floor(log2(n)));
+}
+
+void sol(){
+	ll n;
+	cin>>n;
+	ll x=n&~(n-1);
+	if(n%2 || isPowerOfTwo(n))
+		cout<<-1<<endl;
+	else{
+		cout<<x/2<<" "<<n/2<<" "<<(n-x)/2<<endl;
+	}
+}
+
+int main(){
+	_stdio();
+	int t=1;
+	cin>>t;
+	while(t--)
+		sol();
+}</pre>
+
+<details>
+	<summary>
+		Introduction</summary>
+		Anuj kumar<br>
+		20bcs7473
+	
+</details>
+</body>
+</html>
