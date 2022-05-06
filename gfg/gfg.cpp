@@ -1,66 +1,66 @@
-// { Driver Code Starts
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-void _stdio(){
+void _init_(){
     #ifndef ONLINE_JUDGE
     freopen("/home/anuj/input.txt","r",stdin);
     freopen("/home/anuj/output.txt","w",stdout);
     #endif
 }
 
- // } Driver Code Ends
-class Solution
-{
-    public:
-    //Function to find a continuous sub-array which adds up to a given number.
-    vector<int> subarraySum(int arr[], int n, long long s)
-    {
-        int i=0,j=0;
-        long long maxsum=0;
-        while(i<n){
-            if(maxsum==s)
-                return {i+1,j};
-            if(maxsum<s){
-                maxsum+=arr[j];
-                j++;
-            }
-            else if(maxsum>s){
-                maxsum-=arr[i];
-                i++;
-            }
-        }
-        return {-1};
+class Solution{
+public:
+void swap(int *a,int *b){
+    int tmp=*a;
+    *a=*b;
+    *b=tmp;
+}
 
+int partition(int a[],int l,int h){
+    int pivot=a[l];
+    int i=l,j=h;
+    do{
+        do{i++;}while(a[i]<=pivot);
+        do{j--;}while(a[j]>pivot);
+        if(i<j)
+            swap(&a[i],&a[j]);
+    }while(i<j);
+    swap(&a[l],&a[j]);
+    return j;
+}
+
+void quicksort(int a[],int l,int h){
+    if(l<h){
+        int j=partition(a,l,h);
+        quicksort(a,l,j);
+        quicksort(a,j+1,h);
+    }
+}
+void kthSmallest(int arr[], int l, int r, int k) {
+        //code here
+        arr[r+1]=65535;
+        quicksort(arr,l,r+1);
+        cout<<arr[l+k-1]<<endl;
     }
 };
 
-// { Driver Code Starts.
-
-int main()
- {
-    _stdio();
-    int t;
-    cin>>t;
-    while(t--)
+int main(){
+    _init_();
+    int test_case;
+    cin>>test_case;
+    while(test_case--)
     {
-        int n;
-        long long s;
-        cin>>n>>s;
-        int arr[n];
-        const int mx = 1e9;
-        for(int i=0;i<n;i++)
-        {
-            cin>>arr[i];
-        }
+        int number_of_elements;
+        cin>>number_of_elements;
+        int a[number_of_elements];
+        
+        for(int i=0;i<number_of_elements;i++)
+            cin>>a[i];
+            
+        int k;
+        cin>>k;
         Solution ob;
-        vector<int>res;
-        res = ob.subarraySum(arr, n, s);
-        
-        for(int i = 0;i<res.size();i++)
-            cout<<res[i]<<" ";
-        cout<<endl;
-        
+        ob.kthSmallest(a, 0, number_of_elements-1, k);
     }
-	return 0;
-}  // } Driver Code Ends
+    return 0;
+}
