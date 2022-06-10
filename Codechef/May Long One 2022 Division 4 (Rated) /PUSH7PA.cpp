@@ -1,3 +1,5 @@
+// done
+
 #include <iostream>
 #include <vector>
 #include <map>
@@ -51,10 +53,25 @@ void sol(){
     }
 }
 
+void sol2(){
+    int n;
+    cin>>n;
+    map<int, int> m;
+    for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        m[x]++;
+    }
+    int ans=0;
+    for(auto it:m)
+        ans=max(ans,it.first+it.second-1);
+    cout<<ans<<endl;
+}
+
 int main(){
     _stdio();
     ll t=1;
     cin>>t;
     while(t--)
-        sol();
+        sol2();
 }
