@@ -1,7 +1,10 @@
+// not working..
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <bits/stdc++.h>
+#define ll long long int
 using namespace std;
 
 void _stdio(){
@@ -12,18 +15,18 @@ void _stdio(){
 }
 
 void sol(){
-	string str;
-	cin>>str;
-	int flag=0,n=str.size();
-	for(int i=0;i<n-3;i++){
-		if(str.substr(i,3)=="010" || str.substr(i,3)=="101"){
-			cout<<"Good"<<endl;
+	ll l,r;
+	cin>>l>>r;
+	int flag=0;
+	for(int i=l;i<=r;i++){
+		if((2*i)^(2*i+1)^(2*i+2)^(2*i+3)==0 && (2*i+3)<=r){
 			flag=1;
+			cout<<(2*i)<<" "<<(2*i+1)<<" "<<(2*i+2)<<" "<<(2*i+3)<<endl;
 			break;
 		}
 	}
 	if(flag==0)
-		cout<<"Bad"<<endl;
+		cout<<-1<<endl;
 }
 
 int main(){

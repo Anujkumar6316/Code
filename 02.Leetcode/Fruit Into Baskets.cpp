@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <map>
 #include <algorithm>
 #include <bits/stdc++.h>
+#define ll long long int
 using namespace std;
 
 void _stdio(){
@@ -12,18 +14,22 @@ void _stdio(){
 }
 
 void sol(){
-	string str;
-	cin>>str;
-	int flag=0,n=str.size();
-	for(int i=0;i<n-3;i++){
-		if(str.substr(i,3)=="010" || str.substr(i,3)=="101"){
-			cout<<"Good"<<endl;
-			flag=1;
-			break;
+	int n; cin>>n;
+
+	vector<int> v(n);
+	unordered_map<int,int> m;
+	for(auto *i:v){
+		cin>>i;
+		m[i]++;
+	}
+
+	int ans=0;
+	for(int i=0;i<n-1;i++){
+		int a=v[i],b=;
+		for(int k=i+1;k<n)
+		for(int j=i+1;j<n;j++){
 		}
 	}
-	if(flag==0)
-		cout<<"Bad"<<endl;
 }
 
 int main(){

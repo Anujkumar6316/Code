@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <bits/stdc++.h>
+#define ll long long int
 using namespace std;
 
 void _stdio(){
@@ -12,18 +13,23 @@ void _stdio(){
 }
 
 void sol(){
+	ll a,x;
+	cin>>a;
+	if(a%2)
+		x=(a/2);
+	else
+		x=(a/2)-1;
 	string str;
 	cin>>str;
-	int flag=0,n=str.size();
-	for(int i=0;i<n-3;i++){
-		if(str.substr(i,3)=="010" || str.substr(i,3)=="101"){
-			cout<<"Good"<<endl;
-			flag=1;
-			break;
-		}
+	ll ans=0;
+	for(int i=0;i<=x;i++){
+		if(str[i]!=str[str.size()-1-i])
+			ans++;
 	}
-	if(flag==0)
-		cout<<"Bad"<<endl;
+	if(ans%2)
+		cout<<ans/2+1<<endl;
+	else
+		cout<<ans/2<<endl;
 }
 
 int main(){

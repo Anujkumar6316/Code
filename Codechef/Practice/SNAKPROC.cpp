@@ -1,7 +1,10 @@
+// done
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <bits/stdc++.h>
+#define ll long long int
 using namespace std;
 
 void _stdio(){
@@ -12,18 +15,30 @@ void _stdio(){
 }
 
 void sol(){
-	string str;
-	cin>>str;
-	int flag=0,n=str.size();
-	for(int i=0;i<n-3;i++){
-		if(str.substr(i,3)=="010" || str.substr(i,3)=="101"){
-			cout<<"Good"<<endl;
+	int l;
+	char a;
+	cin>>l;
+	vector<char> ch;
+	for(int i=0;i<l;i++){
+		cin>>a;
+		if(a!='.')
+			ch.push_back(a);
+	}
+	int flag=0;
+	for(int i=0;i<ch.size();i++){
+		if(ch[ch.size()-1]=='H' || ch[0]=='T'){
 			flag=1;
+			cout<<"Invalid"<<endl;
+			break;
+		}
+		else if(ch[i]==ch[i+1]){
+			flag=1;
+			cout<<"Invalid"<<endl;
 			break;
 		}
 	}
 	if(flag==0)
-		cout<<"Bad"<<endl;
+		cout<<"Valid"<<endl;
 }
 
 int main(){
